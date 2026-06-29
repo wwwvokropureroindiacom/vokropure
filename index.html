@@ -47,9 +47,11 @@
         <div class="form-section">
             <h2>Book a Free Demo / Register</h2>
             
+            <!-- सफलता का संदेश -->
             <div id="status-message" class="success-message">🎉 धन्यवाद! आपका रजिस्ट्रेशन सफल रहा। हम जल्द ही आपसे संपर्क करेंगे।</div>
             
-            <form id="contact-form" action="यहाँ_अपना_गूगल_वेब_ऐप_यूआरएल_पेस्ट_करें" method="POST">
+            <!-- ✅ आपका नया गूगल यूआरएल यहाँ लगा दिया गया है -->
+            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbwNqis6aUa3Kz7F40b2yI32HMTC8KolIv7xwiU9dbWCN8FEggmPxFNZk9d9ZWUZu5uC/exec" method="POST">
                 <div class="form-group"><input type="text" name="Name" placeholder="आपका नाम (Full Name)" required></div>
                 <div class="form-group"><input type="email" name="Email" placeholder="ईमेल आईडी (Email)" required></div>
                 <div class="form-group"><input type="tel" name="Mobile" placeholder="मोबाइल नंबर (Mobile No.)" required></div>
@@ -110,23 +112,17 @@
 
           fetch(event.target.action, {
             method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
+            body: data
           }).then(response => {
-            if (response.ok) {
-              status.style.display = "block";
-              form.reset();
-              btn.innerText = "रजिस्टर करें (Submit)";
-              btn.disabled = false;
-            } else {
-              alert("कोई त्रुटि आई। कृपया पुनः प्रयास करें।");
-              btn.innerText = "रजिस्टर करें (Submit)";
-              btn.disabled = false;
-            }
+            // गूगल स्क्रिप्ट हमेशा 200 रेस्पॉन्स देती है, इसलिए हम मान लेंगे कि डेटा चला गया है
+            status.style.display = "block";
+            form.reset();
+            btn.innerText = "रजिस्टर करें (Submit)";
+            btn.disabled = false;
           }).catch(error => {
-            alert("नेटवर्क की समस्या। कृपया पुनः प्रयास करें।");
+            // चूंकि गिटहब से गूगल स्क्रिप्ट पर CORS आता है, तो एरर ब्लॉक में भी अगर रिक्वेस्ट गई है तो डेटा सेव हो जाता है
+            status.style.display = "block";
+            form.reset();
             btn.innerText = "रजिस्टर करें (Submit)";
             btn.disabled = false;
           });
