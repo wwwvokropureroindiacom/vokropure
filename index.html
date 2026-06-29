@@ -19,11 +19,11 @@
         .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
         .form-section { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 500px; margin: 0 auto 50px auto; border-top: 5px solid var(--primary-blue); }
         .form-section h2 { margin-top: 0; text-align: center; color: var(--dark-blue); }
-        .form-section p { text-align: center; color: #666; font-size: 14px; margin-bottom: 20px; }
         .form-group { margin-bottom: 15px; }
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 14px; }
         .submit-btn { width: 100%; padding: 12px; background: var(--primary-blue); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.3s; }
         .submit-btn:hover { background: var(--dark-blue); }
+        .success-message { display: none; background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; text-align: center; font-weight: bold; margin-bottom: 20px; }
         .catalog-title { text-align: center; color: var(--dark-blue); margin-bottom: 10px; font-size: 28px; }
         .catalog-subtitle { text-align: center; color: #666; margin-bottom: 40px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -46,22 +46,25 @@
     <div class="container">
         <div class="form-section">
             <h2>Book a Free Demo / Register</h2>
-            <p>विवरण भरने के बाद सबमिट करें, आपका ईमेल ऐप खुल जाएगा।</p>
-            <form id="contact-form">
-                <div class="form-group"><input type="text" id="user_name" placeholder="आपका नाम (Full Name)" required></div>
-                <div class="form-group"><input type="email" id="user_email" placeholder="ईमेल आईडी (Email)" required></div>
-                <div class="form-group"><input type="tel" id="user_phone" placeholder="मोबाइल नंबर (Mobile No.)" required></div>
+            
+            <div id="status-message" class="success-message">🎉 धन्यवाद! आपका रजिस्ट्रेशन सफल रहा। हम जल्द ही आपसे संपर्क करेंगे।</div>
+            
+            <form id="contact-form" action="यहाँ_अपना_गूगल_वेब_ऐप_यूआरएल_पेस्ट_करें" method="POST">
+                <div class="form-group"><input type="text" name="Name" placeholder="आपका नाम (Full Name)" required></div>
+                <div class="form-group"><input type="email" name="Email" placeholder="ईमेल आईडी (Email)" required></div>
+                <div class="form-group"><input type="tel" name="Mobile" placeholder="मोबाइल नंबर (Mobile No.)" required></div>
                 <div class="form-group">
-                    <select id="ro_model" required>
+                    <select name="RO Model" required>
                         <option value="">मॉडल चुनें (Select RO Model)</option>
                         <option value="Vokro Prime RO+UV">Vokro Prime RO+UV</option>
                         <option value="Vokro Copper Alkaline">Vokro Copper Alkaline</option>
                         <option value="Vokro Commercial 50 LPH">Vokro Commercial 50 LPH</option>
                     </select>
                 </div>
-                <button type="submit" class="submit-btn">रजिस्टर करें (Submit)</button>
+                <button type="submit" id="submit-btn" class="submit-btn">रजिस्टर करें (Submit)</button>
             </form>
         </div>
+        
         <h2 class="catalog-title">Our RO Purification Models</h2>
         <p class="catalog-subtitle">100% Pure & Safe Drinking Water for Your Family</p>
         <div class="grid">
@@ -85,23 +88,50 @@
             </div>
         </div>
     </div>
+    
     <a href="https://wa.me/917383261519?text=Hi%20Vokro%20Pure,%20I%20want%20to%20inquire%20about%20Water%20Purifiers." class="whatsapp-float" target="_blank">
         <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.069-.32-.103-.454.101-.132.196-.512.653-.629.789-.117.135-.235.152-.437.051-.2.101-.845-.312-1.611-.995-.597-.533-1.002-1.191-1.119-1.391-.117-.2-.012-.308.089-.408.092-.089.202-.236.302-.353.101-.117.134-.199.202-.333.067-.133.034-.252-.017-.353-.05-.101-.454-1.093-.622-1.496-.164-.398-.333-.344-.454-.35-.118-.006-.254-.007-.39-.007a.751.751 0 0 0-.543.248c-.185.201-.706.689-.706 1.682 0 1.936 1.412 3.81 1.61 4.077.197.266 2.778 4.242 6.734 5.95 1.02.44 1.815.703 2.437.901.1.031.194.027.266.016.12-.017.454-.186.518-.366.063-.18.063-.334.044-.366-.018-.032-.068-.05-.27-.151z"/>
         </svg>
         Chat on WhatsApp
     </a>
+    
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var name = document.getElementById('user_name').value;
-            var email = document.getElementById('user_email').value;
-            var phone = document.getElementById('user_phone').value;
-            var model = document.getElementById('ro_model').value;
-            var subject = encodeURIComponent("Vokro Pure - New RO Inquiry");
-            var body = encodeURIComponent("Vokro Pure पर नई इंक्वायरी आई है:\n\nनाम: " + name + "\nईमेल: " + email + "\nमोबाइल: " + phone + "\nमॉडल: " + model);
-            window.location.href = "mailto:shivamshukla3027@gmail.com?subject=" + subject + "&body=" + body;
-        });
+        var form = document.getElementById("contact-form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("status-message");
+          var btn = document.getElementById("submit-btn");
+          var data = new FormData(event.target);
+          
+          btn.innerText = "प्रोसेसिंग... (Sending)";
+          btn.disabled = true;
+
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              status.style.display = "block";
+              form.reset();
+              btn.innerText = "रजिस्टर करें (Submit)";
+              btn.disabled = false;
+            } else {
+              alert("कोई त्रुटि आई। कृपया पुनः प्रयास करें।");
+              btn.innerText = "रजिस्टर करें (Submit)";
+              btn.disabled = false;
+            }
+          }).catch(error => {
+            alert("नेटवर्क की समस्या। कृपया पुनः प्रयास करें।");
+            btn.innerText = "रजिस्टर करें (Submit)";
+            btn.disabled = false;
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
     </script>
 </body>
 </html>
