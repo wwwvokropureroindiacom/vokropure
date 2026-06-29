@@ -150,3 +150,51 @@
         (Based on our latest customer reviews | हमारे लेटेस्ट ग्राहकों के रिव्यूज पर आधारित)
     </p>
 </section>
+
+
+
+<!-- CSS हिस्सा -->
+<style>
+  .rating-container { font-family: sans-serif; max-width: 300px; }
+  .star-rating { direction: rtl; display: inline-flex; justify-content: flex-end; }
+  .star-rating input { display: none; }
+  .star-rating label { font-size: 30px; color: #ccc; cursor: pointer; }
+  .star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label { color: #f5c518; }
+  textarea { width: 100%; height: 80px; margin-top: 10px; display: block; }
+  button { margin-top: 10px; padding: 8px 15px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+</style>
+
+<!-- HTML हिस्सा -->
+<div class="rating-container">
+  <h3>आपकी प्रतिक्रिया दें</h3>
+  
+  <div class="star-rating">
+    <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+    <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+    <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+    <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+    <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+  </div>
+
+  <textarea id="reviewText" placeholder="अपना अनुभव यहाँ लिखें..."></textarea>
+  <button onclick="submitReview()">सबमिट करें</button>
+</div>
+
+<!-- JavaScript हिस्सा -->
+<script>
+  function submitReview() {
+    const rating = document.querySelector('input[name="rating"]:checked');
+    const review = document.getElementById('reviewText').value;
+
+    if (!rating) {
+      alert("कृपया एक रेटिंग चुनें!");
+      return;
+    }
+    
+    // यहाँ आप अपना डेटा हैंडल करने का कोड लिख सकते हैं (जैसे API कॉल)
+    console.log("रेटिंग:", rating.value);
+    console.log("रिव्यू:", review);
+    
+    alert("धन्यवाद! आपका रिव्यू सबमिट कर दिया गया है।");
+  }
+</script>
