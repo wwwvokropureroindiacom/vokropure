@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vokro Pure - Reverse Osmosis Water Purifiers</title>
+    <style>
+        :root {
+            --primary-blue: #0077b6;
+            --light-blue: #90e0ef;
+            --dark-blue: #03045e;
+            --bg-gray: #f8f9fa;
+        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: var(--bg-gray); color: #333; padding-bottom: 60px; }
+        header { background: white; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary-blue); }
+        .logo span { color: var(--dark-blue); }
+        .contact-btn { background: var(--primary-blue); color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        .form-section { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); max-width: 500px; margin: 0 auto 50px auto; border-top: 5px solid var(--primary-blue); }
+        .form-section h2 { margin-top: 0; text-align: center; color: var(--dark-blue); }
+        .form-section p { text-align: center; color: #666; font-size: 14px; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 14px; }
+        .submit-btn { width: 100%; padding: 12px; background: var(--primary-blue); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.3s; }
+        .submit-btn:hover { background: var(--dark-blue); }
+        .catalog-title { text-align: center; color: var(--dark-blue); margin-bottom: 10px; font-size: 28px; }
+        .catalog-subtitle { text-align: center; color: #666; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .product-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eef2f3; transition: 0.3s; text-align: center; padding: 20px; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .product-image { width: 100%; height: 220px; background: #e2f1f8; display: flex; align-items: center; justify-content: center; color: var(--primary-blue); font-weight: bold; border-radius: 8px; font-size: 18px; }
+        .product-card h3 { color: var(--dark-blue); margin: 15px 0 10px 0; font-size: 20px; }
+        .specs { font-size: 13px; color: #666; margin: 10px 0; background: #f1f5f9; padding: 8px; border-radius: 5px; text-align: left; }
+        .inquiry-btn { background: #2a9d8f; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; width: 100%; margin-top: 15px; text-decoration: none; display: block; box-sizing: border-box; }
+        .inquiry-btn:hover { background: #264653; }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; border-radius: 50px; text-align: center; font-weight: bold; padding: 12px 20px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 15px; transition: 0.3s; }
+        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Vokro<span>Pure</span></div>
+        <a href="tel:+917383261519" class="contact-btn">📞 Call: 7383261519</a>
+    </header>
+    <div class="container">
+        <div class="form-section">
+            <h2>Book a Free Demo / Register</h2>
+            <p>विवरण भरने के बाद सबमिट करें, आपका ईमेल ऐप खुल जाएगा।</p>
+            <form id="contact-form">
+                <div class="form-group"><input type="text" id="user_name" placeholder="आपका नाम (Full Name)" required></div>
+                <div class="form-group"><input type="email" id="user_email" placeholder="ईमेल आईडी (Email)" required></div>
+                <div class="form-group"><input type="tel" id="user_phone" placeholder="मोबाइल नंबर (Mobile No.)" required></div>
+                <div class="form-group">
+                    <select id="ro_model" required>
+                        <option value="">मॉडल चुनें (Select RO Model)</option>
+                        <option value="Vokro Prime RO+UV">Vokro Prime RO+UV</option>
+                        <option value="Vokro Copper Alkaline">Vokro Copper Alkaline</option>
+                        <option value="Vokro Commercial 50 LPH">Vokro Commercial 50 LPH</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">रजिस्टर करें (Submit)</button>
+            </form>
+        </div>
+        <h2 class="catalog-title">Our RO Purification Models</h2>
+        <p class="catalog-subtitle">100% Pure & Safe Drinking Water for Your Family</p>
+        <div class="grid">
+            <div class="product-card">
+                <div class="product-image">Vokro Prime Image</div>
+                <h3>Vokro Prime RO + UV + TDS</h3>
+                <div class="specs">• Capacity: 12 Liters<br>• Purification: 7 Stages<br>• Best for: Home & Small Office</div>
+                <a href="https://wa.me/917383261519?text=Hi%20Vokro%20Pure,%20I%20am%20interested%20in%20Vokro%20Prime%20RO%20Model." target="_blank" class="inquiry-btn">WhatsApp Inquiry</a>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Vokro Copper Image</div>
+                <h3>Vokro Copper + Alkaline</h3>
+                <div class="specs">• Capacity: 10 Liters<br>• Active Copper Technology & pH Balancer<br>• Best for: Health & Immunity Boost</div>
+                <a href="https://wa.me/917383261519?text=Hi%20Vokro%20Pure,%20I%20am%20interested%20in%20Vokro%20Copper%20Alkaline%20Model." target="_blank" class="inquiry-btn">WhatsApp Inquiry</a>
+            </div>
+            <div class="product-card">
+                <div class="product-image">Vokro Commercial Image</div>
+                <h3>Vokro Commercial RO (50 LPH)</h3>
+                <div class="specs">• Capacity: 50 Liters per hour<br>• High Duty Twin Pump<br>• Best for: Factories & Offices</div>
+                <a href="https://wa.me/917383261519?text=Hi%20Vokro%20Pure,%20I%20am%20interested%20in%20Vokro%20Commercial%20RO." target="_blank" class="inquiry-btn">WhatsApp Inquiry</a>
+            </div>
+        </div>
+    </div>
+    <a href="https://wa.me/917383261519?text=Hi%20Vokro%20Pure,%20I%20want%20to%20inquire%20about%20Water%20Purifiers." class="whatsapp-float" target="_blank">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.069-.32-.103-.454.101-.132.196-.512.653-.629.789-.117.135-.235.152-.437.051-.2.101-.845-.312-1.611-.995-.597-.533-1.002-1.191-1.119-1.391-.117-.2-.012-.308.089-.408.092-.089.202-.236.302-.353.101-.117.134-.199.202-.333.067-.133.034-.252-.017-.353-.05-.101-.454-1.093-.622-1.496-.164-.398-.333-.344-.454-.35-.118-.006-.254-.007-.39-.007a.751.751 0 0 0-.543.248c-.185.201-.706.689-.706 1.682 0 1.936 1.412 3.81 1.61 4.077.197.266 2.778 4.242 6.734 5.95 1.02.44 1.815.703 2.437.901.1.031.194.027.266.016.12-.017.454-.186.518-.366.063-.18.063-.334.044-.366-.018-.032-.068-.05-.27-.151z"/>
+        </svg>
+        Chat on WhatsApp
+    </a>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('user_name').value;
+            var email = document.getElementById('user_email').value;
+            var phone = document.getElementById('user_phone').value;
+            var model = document.getElementById('ro_model').value;
+            var subject = encodeURIComponent("Vokro Pure - New RO Inquiry");
+            var body = encodeURIComponent("Vokro Pure पर नई इंक्वायरी आई है:\n\nनाम: " + name + "\nईमेल: " + email + "\nमोबाइल: " + phone + "\nमॉडल: " + model);
+            window.location.href = "mailto:shivamshukla3027@gmail.com?subject=" + subject + "&body=" + body;
+        });
+    </script>
+</body>
+</html>
